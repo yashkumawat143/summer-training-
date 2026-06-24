@@ -1,0 +1,158 @@
+Day 7 Questions....
+
+
+
+1....print address.
+answer :
+
+#include<iostream>
+using namespace std;
+int main(){
+    int x;
+    cout<<"Enter the number : ";
+    cin>>x;
+    int *ptr;
+    ptr=&x;
+    cout<<"The address = "<<ptr;
+}
+
+
+
+2....swap using pointer.
+answer :
+
+#include<iostream>
+using namespace std;
+int main(){
+    int x,y;
+
+    cout<<"Enter the first number : ";
+    cin>>x;
+    cout<<"Enter the second number : ";
+    cin>>y;
+    int *ptr=&x;
+    int *ptr1=&y;
+    int temp=*ptr;
+    *ptr=*ptr1;
+    *ptr1=temp;
+    cout<<*ptr<<" ";
+    cout<<*ptr1;
+}
+
+
+
+3....Array sum using pointer.
+answer :
+
+
+#include<iostream>
+using namespace std;
+int main(){
+    int length;
+    int *ptr;
+    cout<<"Enter the size : ";
+    cin>>length;
+    int a[length];
+    for(int i=0;i<length;i++){
+        cout<<"Enter the number : ";
+        ptr=&a[i];
+        cin>>*ptr;
+    }
+    int sum=0;
+    for(int i=0;i<length;i++){
+        ptr=&a[i];
+        sum+=*ptr;
+        
+    }
+    cout<<sum;
+
+}
+
+
+
+4....largest element using pointer.
+answer :
+
+#include<iostream>
+using namespace std;
+int main(){
+    int length;
+    cout<<"Enter the size : ";
+    cin>>length;
+    int a[length];
+    int *ptr;
+    for(int i=0;i<length;i++){
+        cout<<"Enter the number : ";
+        ptr=&a[i];
+        cin>>*ptr;
+    }
+    int max=a[0];
+    for(int i=0;i<length;i++){
+        ptr=&a[i];
+        if(max<*ptr){
+            max=*ptr;
+        }
+    }
+    cout<<"Largest value : "<<max;    
+
+
+}
+
+
+
+5....Traverse array using pointer.
+answer :
+
+
+#include<iostream>
+using namespace std;
+int main(){
+    int length;
+    int *ptr;
+    cout<<"Enter the size : ";
+    cin>>length;
+    int a[length];
+    for(int i=0;i<length;i++){
+        cout<<"Enter the number : ";
+        ptr=&a[i];
+        cin>>*ptr;
+    }   
+
+    for(int i=0;i<length;i++){
+        ptr=&a[i];
+        cout<<*ptr<<" ";
+    }
+
+
+
+}
+
+
+
+
+6....reverse array using pointer.
+answer :
+
+#include<iostream>
+using namespace std;
+int main(){
+    int length;
+    int *ptr;
+    cout<<"Enter the size : ";
+    cin>>length;
+    int a[length];
+    for(int i=0;i<length;i++){
+        cout<<"Enter the number : ";
+        ptr=&a[i];
+        cin>>*ptr;
+
+    }
+    for(int i=length-1;i>=0;i--){
+        ptr=&a[i];
+        cout<<*ptr<<" ";
+        
+    }
+
+
+
+}
