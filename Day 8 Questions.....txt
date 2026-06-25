@@ -1,0 +1,158 @@
+Day 8 Questions....
+
+
+
+1....Factorial.
+
+answer :
+
+#include<iostream>
+using namespace std;
+
+int fac(int n){
+    if(n==1){
+        return 1;
+    }
+    return n*fac(n-1);
+}
+int main(){
+    int a;
+    cout<<"Enter the number : ";
+    cin>>a;
+    cout<<fac(a);
+}
+
+
+
+2....Fibonacci.
+answer :
+
+#include<iostream>
+using namespace std;
+
+int fib(int n){
+    if(n==0){
+        return 0;
+    }
+    if(n==1){
+        return 1;
+
+    }
+    return fib(n-1)+fib(n-2);
+
+}
+int main(){
+    int a;
+    cout<<"Enter the number : ";
+    cin>>a;
+    for(int i=0;i<=a;i++){
+        cout<<fib(i)<<" ";
+    }
+}
+
+
+
+3....sum.
+answer :
+
+#include<iostream>
+using namespace std;
+
+int sum(int n,int n1){
+    if(n1==0){
+        return n;
+    }
+    return sum(n+1,n1-1);
+
+}
+int main(){
+    int a,b;
+    cout<<"Enter the first number ";
+    cin>>a;
+    cout<<"Enter the second number ";
+    cin>>b;
+    cout<<"The sum = "<<sum(a,b);
+}
+
+
+
+
+4....power function.
+answer :
+
+#include<iostream>
+using namespace std;
+
+int rev(int a,int b){
+    if(a==0){
+        return b;
+    }
+    return b*rev(a-1,b);
+}
+int main(){
+    int n,n1;
+    cout<<"Enter the power : ";
+    cin>>n;
+    cout<<"Enter the base : ";
+    cin>>n1;
+    
+    cout<<rev(n,n1);
+
+}
+
+
+
+5....reverse string.
+answer :
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+void rev(string str,int i){
+    if(i<0){
+        return;
+    }
+    cout<<str[i];
+    rev(str,i-1);
+
+}
+int main(){
+    string str;
+    cout<<"Enter the element : ";
+    cin>>str;
+    rev(str,str.length()-1);
+}
+
+
+
+6....palindrome check.
+answer :
+
+#include<iostream>
+using namespace std;
+
+int pal(int i,int re){
+    if(i==0){
+        return re;
+    }
+    return pal(i/10,re*10+i%10);
+    
+    
+
+
+}
+int main(){
+    int n;
+    cout<<"Enter the number : ";
+    cin>>n;
+    int temp=n;
+    int a=pal(n,0);
+    if(temp==a){
+        cout<<"pal";
+    }
+    else{
+        cout<<"not a pal";
+    }
+
+}
