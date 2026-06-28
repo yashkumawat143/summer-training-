@@ -1,0 +1,191 @@
+Day 10 Questions....
+
+
+
+1....student record using pair.
+answer :
+
+#include<iostream>
+#include<utility>
+using namespace std;
+int main(){
+    pair<int,string>n;
+    n.first=121;
+    n.second="yash";
+    cout<<"The roll number = "<<n.first<<endl;
+    cout<<"The name = "<<n.second;
+
+}
+
+
+
+2....unique element.
+answer :
+
+#include<iostream>
+#include<set>
+using namespace std;
+int main(){
+    set<int> s;
+    s.insert(1);
+    s.insert(2);
+    s.insert(2);
+    cout<<"Only unique value "<<endl;
+    for(int x:s){
+        cout<<x<<endl;
+    }
+}
+
+
+
+3....count distinct element.
+answer :
+
+#include<iostream>
+#include<set>
+using namespace std;
+int main(){
+    set<int> s;
+    int count=0;
+    s.insert(1);
+    s.insert(3);
+    s.insert(4);
+    s.insert(2);
+    s.insert(1);
+    for(int x:s){
+        count++;
+    }
+    cout<<"Total element : "<<count<<endl;
+}
+
+
+
+4....union of array.
+answer :
+
+#include<iostream>
+#include<set>
+using namespace std;
+int main(){
+    set<int> s;
+    int a,b;
+    
+    cout<<"Enter the size of first array : ";
+    cin>>a;
+    int arr[a];
+    
+    for(int i=0;i<a;i++){
+        cout<<"Enter the elements : ";
+        cin>>arr[i];
+        
+    }
+    cout<<"Enter the second arr size : ";
+    cin>>b;
+    int arr1[b];
+    
+    for(int i=0;i<b;i++){
+        cout<<"Enter the elements : ";
+        cin>>arr1[i];
+    }
+    for(int i=0;i<a;i++){
+        s.insert(arr[i]);
+    }
+    for(int i=0;i<b;i++){
+        s.insert(arr1[i]);
+    }
+    for(int x:s){
+        cout<<x<<endl;
+    }
+
+}
+
+
+
+5....intersection of array.
+answer :
+
+
+#include<iostream>
+#include<set>
+using namespace std;
+int main(){
+    set<int> s;
+    int a,b;
+    cout<<"Enter the size of first array : ";
+    cin>>a;
+    int arr[a];
+    for(int i=0;i<a;i++){
+        cout<<"Enter the elements : ";
+        cin>>arr[i];
+    }
+    cout<<"Enter the size of second array : ";
+    cin>>b;
+    int arr1[b];
+    for(int i=0;i<b;i++){
+        cout<<"Enter the elements : ";
+        cin>>arr1[i];
+
+    }
+    for(int i=0;i<a;i++){
+        s.insert(arr[i]);
+    }
+    for(int i=0;i<b;i++){
+        if(s.find(arr1[i])!=s.end()){
+            cout<<arr1[i]<<" ";
+            s.erase(arr1[i]);
+
+        }
+    }
+}
+
+
+
+
+6....remove duplicates.
+answer :
+
+#include<iostream>
+#include<set>
+using namespace std;
+int main(){
+    set<int> s;
+    s.insert(1);
+    s.insert(2);
+    s.insert(3);
+    s.insert(4);
+    s.insert(2);
+    s.insert(4);
+    for(int x:s){
+        cout<<x<<" ";
+    }
+}
+
+
+or
+
+
+#include<iostream>
+#include<set>
+using namespace std;
+int main(){
+    set<int> s;
+    int a;
+    cout<<"Enter the size : ";
+    cin>>a;
+    int arr[a];
+    for(int i=0;i<a;i++){
+        cout<<"Enter the elements : ";
+        cin>>arr[i];
+    }
+    for(int i=0;i<a;i++){
+        s.insert(arr[i]);
+    }
+    for(int x:s){
+        cout<<x<<" ";
+    }
+
+}
+
+
+
+
