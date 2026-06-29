@@ -1,0 +1,173 @@
+Day 11 Questions....
+
+
+
+1....frequency of element.
+answer :
+
+#include<iostream>
+#include<map>
+using namespace std;
+int main(){
+    map<int,int>s;
+    int n;
+    cout<<"Enter the size : ";
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cout<<"Enter the elements : ";
+        cin>>arr[i];
+    }
+    
+    for(int i=0;i<n;i++){
+        s[arr[i]]++;
+    }
+    for(auto x:s){
+        cout<<x.first<<"="<<x.second<<endl;
+    }
+
+
+
+}
+
+
+
+2....character frequency.
+answer :
+
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string s;
+    cout<<"Enter the element : ";
+    cin>>s;
+    for(int i=0;i<s.length();i++){
+        int count=1;
+        for(int j=i+1;j<s.length();j++){
+            if(s[i]==s[j]){
+                count++;
+            }
+        }
+        cout<<s[i]<<"="<<count<<endl;
+    }
+}
+
+
+
+3....most frequent element.
+answer :
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string s;
+    cout<<"Enter the element : ";
+    cin>>s;
+    int max=0;
+    for(int i=0;i<s.length();i++){
+        int count=1;
+        
+        for(int j=i+1;j<s.length();j++){
+            if(s[i]==s[j]){
+                count++;
+                
+            }
+        }
+        if(count>max){
+            max=count;
+        }
+        cout<<s[i]<<"="<<count<<endl;
+    }
+    cout<<"The maximum element = "<<max;
+    
+
+}
+
+
+
+4....find non-repeated character.
+answer :
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string s;
+    cout<<"Enter the element : ";
+    cin>>s;
+    for(int i=0;i<s.length();i++){
+        int count=1;
+        for(int j=i+1;j<s.length();j++){
+            if(s[i]==s[j]){
+                count++;
+            }
+        }
+        if(count==1){
+            cout<<s[i];
+            break;
+        }
+    }
+}
+
+
+
+
+
+5....word frequency.
+answer :
+
+#include<iostream>
+#include<string>
+#include<map>
+#include<sstream>
+using namespace std;
+int main(){
+    string s;
+    cout<<"Enter the words : ";
+    getline(cin,s);
+    map<string,int>fre;
+    stringstream ss(s);
+    string word;
+    while(ss>>word){
+        fre[word]++;
+    }
+    for(auto x:fre){
+        cout<<x.first<<"="<<x.second<<endl;
+    }
+
+}
+
+
+
+6....Query frequency count.
+answer :
+
+#include<iostream>
+#include<map>
+using namespace std;
+int main(){
+    int n;
+    cout<<"Enter the size : ";
+    cin>>n;
+    map<int,int>fre;
+    for(int i=0;i<n;i++){
+        int x;
+        cout<<"Enter the number : ";
+        cin>>x;
+        fre[x]++;
+    }
+    int q;
+    cout<<"Enter the Query : ";
+    cin>>q;
+    while(q--){
+        int x;
+        cout<<"enter the number : ";
+        cin>>x;
+        cout<<x<<"="<<fre[x]<<endl;
+    }
+}
+
