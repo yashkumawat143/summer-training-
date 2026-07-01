@@ -1,0 +1,247 @@
+Day 12 Questions....
+
+
+
+1....student class.
+answer :
+
+#include<iostream>
+using namespace std;
+
+class student{
+    public:
+    string name;
+    int  roll;
+    int marks;
+    
+    void input(){
+        cout<<"Enter the name : ";
+        cin>>name;
+        cout<<"Enter the roll : ";
+        cin>>roll;
+        cout<<"Enter the marks : ";
+        cin>>marks;
+    }
+    void output(){
+        cout<<"Name : "<<name<<endl;
+        cout<<"Roll number : "<<roll<<endl;
+        cout<<"marks : "<<marks<<endl;
+    }
+};
+int main(){
+    student s;
+    s.input();
+    s.output();
+}
+
+
+
+
+2....Employee class.
+answer :
+
+#include<iostream>
+using namespace std;
+
+class emp{
+    private:
+    string empl;
+    int id;
+
+    public:
+       emp(string empli,int ide){
+        empl=empli;
+        id=ide;
+
+       }
+    void display(){
+        cout<<"Name : "<<empl<<endl;
+        cout<<"id : "<<id<<endl;
+    }
+
+};
+int main(){
+    string a;
+    int b;
+    cout<<"Enter the name : ";
+    cin>>a;
+    cout<<"Enter the id : ";
+    cin>>b;
+    emp e(a,b);
+    e.display();
+}
+
+
+
+3....rectangle angle.
+answer :
+
+
+#include<iostream>
+using namespace std;
+
+class rectangle{
+    private:
+    int length;
+    int width;
+    public:
+    void input(){
+        cout<<"Enter the length : ";
+        cin>>length;
+        cout<<"Enter the width : ";
+        cin>>width;
+
+    }
+    int setdata(){
+        return length*width;
+    }
+
+};
+int main(){
+    rectangle r;
+    r.input();
+    cout<<"Area of rectangle : "<<r.setdata()<<endl;
+}
+
+
+
+4....Bank account.
+answer :
+
+
+#include<iostream>
+using namespace std;
+
+class bank{
+    private:
+    int amount;
+
+    public:
+    bank(){
+        amount=100000;
+    }
+    void deposite(int a){
+        
+        amount+=a;
+        cout<<"Amount has been added successfully";
+        
+        
+
+
+    }
+    void withdraw(int b){
+        if(amount>=b){
+            amount-=b;
+            cout<<"Amount has been successfully withdraw";
+        }
+        else{
+            cout<<"No sufficient amount";
+        }
+
+    }
+
+
+};
+int main(){
+    
+    bank b;
+    while(true){
+        int n;
+        cout<<"1.deposite"<<endl;
+        cout<<"2.Withdraw"<<endl;
+        cout<<"3.Exit"<<endl;
+        cout<<"Enter the number : ";
+        cin>>n;
+        
+        if(n==1){
+            int n1;
+            cout<<"Enter the amount : ";
+            cin>>n1;
+            
+            b.deposite(n1);
+            
+
+
+        }
+        else if(n==2){
+            int n1;
+            cout<<"Enter the amount : ";
+            cin>>n1;
+            b.withdraw(n1);
+        }
+        else if(n==3){
+            break;
+        }
+        else{
+            cout<<"Error , Enter the valid number";
+        }
+
+    }
+}
+
+
+
+
+
+5....car + static.
+answer :
+
+
+#include <iostream>
+using namespace std;
+
+class Car {
+private:
+    static int count;   
+
+public:
+    Car() {
+        count++;       
+    }
+
+    static void showCount() {
+        cout << "Total Car objects created: " << count << endl;
+    }
+};
+
+
+int Car::count = 0;
+
+int main() {
+    Car c1;
+    Car c2;
+    Car c3;
+
+    Car::showCount();
+
+    return 0;
+}
+
+
+
+
+6....box +this.
+answer :
+
+#include<iostream>
+using namespace std;
+class rectangle{
+    private:
+    int length;
+    public:
+    void setlength(int length){
+        this->length=length;
+
+    }
+    void display(){
+            cout<<"The length = "<<length<<endl;
+    }
+
+};
+int main(){
+    rectangle r;
+    r.setlength(40);
+    r.display();
+
+
+}
